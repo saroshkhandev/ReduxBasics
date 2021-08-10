@@ -8,14 +8,15 @@ const Auth = () => {
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
 
-  const loginHandler = () => {
+  const loginHandler = (event) => {
+    event.preventDefault();
     dispatch(authActions.login());
   };
 
   return (
     <main className={classes.auth}>
       <section>
-        <form>
+        <form onSubmit={loginHandler}>
           <div className={classes.control}>
             <label htmlFor="email">Email</label>
             <input type="email" id="email" ref={emailInputRef} />
@@ -24,7 +25,7 @@ const Auth = () => {
             <label htmlFor="password">Password</label>
             <input type="password" id="password" ref={passwordInputRef} />
           </div>
-          <button onClick={loginHandler}>Login</button>
+          <button>Login</button>
         </form>
       </section>
     </main>

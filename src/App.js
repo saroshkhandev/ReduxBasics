@@ -7,7 +7,7 @@ import Auth from "./components/Auth";
 
 function App() {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
-  console.log(isAuthenticated);
+  // console.log(isAuthenticated);
   return (
     <Fragment>
       <Header />
